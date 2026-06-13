@@ -46,16 +46,19 @@ One static binary. Zero runtime dependencies. Set it up once and forget it's the
 ## Quick start
 
 ```bash
-# 1. Download the latest release
-curl -LO https://github.com/novaheadend/nova-core-releases/releases/latest/download/nova-core
-curl -LO https://github.com/novaheadend/nova-core-releases/releases/latest/download/nova-core.sha256
+# 1. Pick your CPU architecture and download the latest release
+#    amd64 = PC / x86-64 server   arm64 = Pi 4/5 + ARM servers   armv7 = older 32-bit Pi
+ARCH=amd64
+BASE=https://github.com/novaheadend/nova-core-releases/releases/latest/download
+curl -LO $BASE/nova-core-linux-$ARCH
+curl -LO $BASE/nova-core-linux-$ARCH.sha256
 
 # 2. Verify the download
-sha256sum -c nova-core.sha256
+sha256sum -c nova-core-linux-$ARCH.sha256
 
 # 3. Install as a systemd service
-chmod +x nova-core
-sudo ./nova-core -install
+chmod +x nova-core-linux-$ARCH
+sudo ./nova-core-linux-$ARCH -install
 ```
 
 The installer creates `/opt/nova-core`, registers a `systemd` service, and prints your dashboard URL plus a generated admin password:
@@ -73,7 +76,7 @@ Open the URL, sign in, change the password from **Settings → Users**, then add
 
 | | |
 |---|---|
-| OS | Linux x86-64 |
+| OS | Linux **x86-64**, **ARM64**, or **ARMv7** |
 | Tuners | DVB kernel drivers for your card (TBS and similar) |
 | Privileges | root (for `/dev/dvb` access) |
 | Dependencies | **none** — no ffmpeg, no libraries |
@@ -94,10 +97,10 @@ sudo /opt/nova-core/nova-core -uninstall
 
 ## Verifying integrity
 
-Every release ships a `nova-core.sha256`. Always verify before installing:
+Every release ships a matching `nova-core-linux-<arch>.sha256`. Always verify before installing:
 
 ```bash
-sha256sum -c nova-core.sha256
+sha256sum -c nova-core-linux-amd64.sha256
 ```
 
 ## License
