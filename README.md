@@ -4,7 +4,7 @@
 
 **DVB → IP streaming headend. One static binary. No ffmpeg, no dependencies.**
 
-Turn DVB-S / S2 / T / T2 / C tuners into HTTP-TS, HLS and UDP streams with a modern web UI, EPG, and a built-in playlist — on a single Linux binary you install in one command.
+Turn DVB-S / S2 / T / T2 / C tuners into HTTP-TS and UDP streams with a modern web UI, EPG, and a built-in playlist — on a single Linux binary you install in one command.
 
 [![Latest release](https://img.shields.io/github/v/release/novaheadend/nova-core-releases?label=download&style=for-the-badge)](https://github.com/novaheadend/nova-core-releases/releases/latest)
 ![Platform](https://img.shields.io/badge/linux-amd64%20%7C%20arm64%20%7C%20armv7-blue?style=for-the-badge)
@@ -20,7 +20,7 @@ Turn DVB-S / S2 / T / T2 / C tuners into HTTP-TS, HLS and UDP streams with a mod
 ## Features
 
 - **Inputs:** DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C (full Linux DVB API, v5 signal stats)
-- **Outputs:** HTTP-TS, HLS, UDP / multicast, and a one-click `/playlist.m3u`
+- **Outputs:** HTTP-TS, UDP / multicast, and a one-click `/playlist.m3u`
 - **Modern web UI** — tuners, streams, live signal / quality, client sessions, logs, EPG
 - **EPG** — XMLTV harvest and serve, per-source scheduling
 - **Single static binary** — no ffmpeg, no Python, nothing else to install
@@ -47,7 +47,7 @@ Uninstall any time with `sudo ./nova-core -uninstall`.
 | Price | **Free core** | Commercial | Commercial ($$$) |
 | Footprint | **Single binary, no deps** | Binary + Lua | Heavy install |
 | DVB-S / S2 / T / T2 / C input | ✅ | ✅ | ✅ |
-| HTTP-TS / HLS / UDP output | ✅ | ✅ | ✅ |
+| HTTP-TS / UDP output | ✅ | ✅ | ✅ |
 | Built-in modern web UI | ✅ | partial | ✅ |
 | EPG (XMLTV) | ✅ | ✅ | ✅ |
 | ARM / low-power | ✅ | partial | ❌ |
