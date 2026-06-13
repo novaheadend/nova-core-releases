@@ -2,7 +2,7 @@
 
 # Nova Core
 
-**A dependency-free DVB → MPEG-TS streaming headend.**
+**A dependency-free DVB → MPEG-TS streaming headend — multi-core, self-healing, built to run 24/7.**
 
 Tune satellite, terrestrial, and cable muxes and restream them over IP —
 one static binary, no ffmpeg, no libraries.
@@ -30,7 +30,17 @@ Nova Core turns a Linux box with DVB tuners into a live IPTV headend:
 - **Security**: IP allow-list, login captcha after repeated failures, API brute-force lockout
 - **Operations**: scheduled restarts, idle-tuner signal monitoring, one-click log export, in-UI config editor
 
-One static binary. Zero runtime dependencies. Runs as a `systemd` service.
+## Built to run 24/7
+
+Nova Core is engineered to stream unattended for months at a time:
+
+- **Multi-core by design** — every channel runs concurrently on its own worker. Throughput scales with your CPU cores, not a single thread. Dozens of streams on one box, no sweat.
+- **Self-healing** — if a feed drops (rain fade, signal loss, an upstream hiccup), Nova detects it and **automatically re-tunes and restores the stream**. No operator, no manual restart.
+- **Rock-solid stability** — battle-tested on a live 26-channel headend running continuously. Bounded, GC-tuned memory keeps RAM flat even under heavy multi-stream load.
+- **Crash- and reboot-proof** — runs as a `systemd` service with automatic restart; after a power cut or kernel update it comes back streaming on its own.
+- **Scheduled restarts** — optional daily/weekly maintenance windows keep long-running deployments fresh.
+
+One static binary. Zero runtime dependencies. Set it up once and forget it's there.
 
 ## Quick start
 
