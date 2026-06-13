@@ -1,0 +1,49 @@
+Nova Core — End User License Agreement (EULA)
+
+Copyright (c) 2026 novaheadend.com. All rights reserved.
+
+This repository distributes Nova Core in BINARY form only. Nova Core is
+proprietary software. The source code is not provided and is not part of
+this distribution.
+
+1. GRANT OF LICENSE
+   You are granted a non-exclusive, non-transferable, royalty-free license
+   to download, install, and run the Nova Core binaries ("the Software")
+   for your own use, including commercial use, subject to the terms below.
+
+2. RESTRICTIONS
+   You may NOT:
+   (a) reverse engineer, decompile, disassemble, or otherwise attempt to
+       derive the source code or internal design of the Software, except
+       to the limited extent such restriction is prohibited by applicable
+       law;
+   (b) modify, adapt, or create derivative works of the Software;
+   (c) redistribute, resell, sublicense, rent, lease, or host the Software
+       for distribution to third parties without prior written permission
+       from novaheadend.com;
+   (d) remove or alter any copyright, trademark, or other proprietary
+       notices contained in the Software.
+
+3. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+
+4. LIMITATION OF LIABILITY
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+5. CONTENT RESPONSIBILITY
+   You are solely responsible for ensuring that your use of the Software
+   to receive, process, and redistribute broadcast signals complies with
+   all applicable laws and with the rights of content owners in your
+   jurisdiction.
+
+6. ENTERPRISE
+   An Enterprise edition with extended features and integrations is
+   available under a separate commercial agreement. Contact
+   novaheadend.com.
+
+By installing or using the Software you agree to the terms of this EULA.
