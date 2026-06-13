@@ -29,6 +29,20 @@ Turn DVB-S / S2 / T / T2 / C tuners into HTTP-TS and UDP streams with a modern w
 - **Secure by default** — IP allow-list and brute-force-resistant admin login
 - **Architectures** — Linux amd64, arm64, armv7
 
+## Requirements
+
+- **OS:** a **systemd**-based Linux distribution. Tested on Debian 11/12 and
+  Ubuntu 20.04+; works on Fedora / RHEL / Rocky / AlmaLinux, openSUSE, Arch,
+  Raspberry Pi OS (64-bit) and Armbian. Non-systemd distros (Alpine, Void,
+  Devuan) can run the binary manually but `-install` needs systemd.
+- **Kernel DVB drivers** with your tuner exposed at `/dev/dvb/*`.
+- **CPU:** x86-64-v2 (≈2009+) for the amd64 build, or arm64 / armv7.
+- **root** (install writes to `/opt/nova-core` and registers a systemd unit).
+- **No** ffmpeg, Python, or libc dependency — a single static binary.
+
+> Bare-metal recommended for DVB capture: most cards (e.g. NetUP/cx23885)
+> need real PCIe DMA and do not work reliably under virtualization passthrough.
+
 ## Quick start
 
 ```sh
