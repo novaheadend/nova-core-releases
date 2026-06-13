@@ -50,15 +50,15 @@ One static binary. Zero runtime dependencies. Set it up once and forget it's the
 #    amd64 = PC / x86-64 server   arm64 = Pi 4/5 + ARM servers   armv7 = older 32-bit Pi
 ARCH=amd64
 BASE=https://github.com/novaheadend/nova-core-releases/releases/latest/download
-curl -LO $BASE/nova-core-linux-$ARCH
-curl -LO $BASE/nova-core-linux-$ARCH.sha256
+curl -LO $BASE/nova-core-linux-$ARCH.tar.gz
+curl -LO $BASE/nova-core-linux-$ARCH.tar.gz.sha256
 
-# 2. Verify the download
-sha256sum -c nova-core-linux-$ARCH.sha256
+# 2. Verify, then extract (always unpacks to a fixed )
+sha256sum -c nova-core-linux-$ARCH.tar.gz.sha256
+tar xzf nova-core-linux-$ARCH.tar.gz
 
 # 3. Install as a systemd service
-chmod +x nova-core-linux-$ARCH
-sudo ./nova-core-linux-$ARCH -install
+sudo ./nova-core -install
 ```
 
 The installer creates `/opt/nova-core`, registers a `systemd` service, and prints your dashboard URL plus a generated admin password:
@@ -97,10 +97,10 @@ sudo /opt/nova-core/nova-core -uninstall
 
 ## Verifying integrity
 
-Every release ships a matching `nova-core-linux-<arch>.sha256`. Always verify before installing:
+Every release ships a matching `nova-core-linux-<arch>.tar.gz.sha256`. Always verify before installing:
 
 ```bash
-sha256sum -c nova-core-linux-amd64.sha256
+sha256sum -c nova-core-linux-amd64.tar.gz.sha256
 ```
 
 ## License
