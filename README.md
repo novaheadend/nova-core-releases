@@ -8,7 +8,7 @@ Tune satellite, terrestrial, and cable muxes and restream them over IP —
 one static binary, no ffmpeg, no libraries.
 
 [![Release](https://img.shields.io/github/v/release/novaheadend/nova-core-releases?color=5b6cf2)](https://github.com/novaheadend/nova-core-releases/releases/latest)
-![Platform](https://img.shields.io/badge/platform-linux%2Fx86--64-444)
+![Platform](https://img.shields.io/badge/platform-linux%20amd64%20%7C%20arm64%20%7C%20armv7-444)
 ![License](https://img.shields.io/badge/license-proprietary%20freeware-888)
 
 <img src="docs/dashboard.png" alt="Nova Core dashboard" width="900">
