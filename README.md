@@ -11,6 +11,8 @@ one static binary, no ffmpeg, no libraries.
 ![Platform](https://img.shields.io/badge/platform-linux%2Fx86--64-444)
 ![License](https://img.shields.io/badge/license-proprietary%20freeware-888)
 
+<img src="docs/dashboard.png" alt="Nova Core dashboard" width="900">
+
 </div>
 
 ---
