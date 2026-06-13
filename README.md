@@ -23,6 +23,7 @@ Nova Core turns a Linux box with DVB tuners into a live IPTV headend:
 
 - **DVB-S/S2, DVB-T/T2, DVB-C** tuning
 - **Native Go MPEG-TS** demux + single-program PAT/PMT rewrite — **no ffmpeg, no transcode, no re-mux artifacts**
+- **Frame-accurate A/V sync** — PCR and PTS/DTS preserved end-to-end, so audio and video stay locked with zero lip-sync drift, even on streams running for weeks
 - **HTTP-TS** and **UDP / RTP multicast** egress, with per-output interface binding
 - **EPG / XMLTV** harvesting (SDT + EIT)
 - **M3U playlist** of every channel — paste straight into VLC or a set-top box
