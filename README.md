@@ -13,8 +13,9 @@ Turn DVB-S / S2 / T / T2 / C tuners into HTTP-TS, HLS and UDP streams with a mod
 
 > A lightweight, self-hosted **IPTV streaming server** and **DVB-to-IP gateway** — a free, modern alternative to Astra (Cesbo) and Flussonic for satellite / terrestrial / cable headends.
 
-<!-- TODO: drop a UI screenshot / GIF here — it sells the product -->
-<!-- ![Nova Core dashboard](docs/screenshot-dashboard.png) -->
+<div align="center">
+<img src="docs/screenshot-dashboard.png" alt="Nova Core dashboard — 87 streams, 16 tuners, live signal and quality" width="100%">
+</div>
 
 ## Features
 
