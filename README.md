@@ -7,7 +7,7 @@
 Turn DVB-S / S2 / T / T2 / C tuners into HTTP-TS and UDP streams with a modern web UI, EPG, and a built-in playlist — on a single Linux binary you install in one command.
 
 [![Latest release](https://img.shields.io/github/v/release/novaheadend/nova-core-releases?label=download&style=for-the-badge)](https://github.com/novaheadend/nova-core-releases/releases/latest)
-![Platform](https://img.shields.io/badge/linux-amd64%20%7C%20arm64%20%7C%20armv7-blue?style=for-the-badge)
+![Platform](https://img.shields.io/badge/linux-amd64%20%7C%20arm64%20%7C%20armv7%20%7C%20i386-blue?style=for-the-badge)
 
 </div>
 
@@ -27,7 +27,7 @@ Turn DVB-S / S2 / T / T2 / C tuners into HTTP-TS and UDP streams with a modern w
 - **One-command install** — systemd unit + bootstrap admin, done
 - **Light on resources** — runs a 60+ stream headend on a low-power APU
 - **Secure by default** — IP allow-list and brute-force-resistant admin login
-- **Architectures** — Linux amd64, arm64, armv7
+- **Architectures** — Linux amd64, arm64, armv7, i386
 
 ## Requirements
 
@@ -36,7 +36,7 @@ Turn DVB-S / S2 / T / T2 / C tuners into HTTP-TS and UDP streams with a modern w
   Raspberry Pi OS (64-bit) and Armbian. Non-systemd distros (Alpine, Void,
   Devuan) can run the binary manually but `-install` needs systemd.
 - **Kernel DVB drivers** with your tuner exposed at `/dev/dvb/*`.
-- **CPU:** x86-64-v2 (≈2009+) for the amd64 build, or arm64 / armv7.
+- **CPU:** x86-64-v2 (≈2009+) for the amd64 build, or arm64 / armv7 / i386 (32-bit x86, SSE2).
 - **root** (install writes to `/opt/nova-core` and registers a systemd unit).
 - **No** ffmpeg, Python, or libc dependency — a single static binary.
 
