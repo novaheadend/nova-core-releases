@@ -80,3 +80,20 @@ Nova Core is **proprietary software, free to use** in binary form — see [LICEN
 <div align="center">
 <sub>Nova Core — DVB to MPEG-TS streaming headend · self-hosted IPTV server · Astra / Flussonic alternative · © novaheadend.com</sub>
 </div>
+
+## Docker
+
+An official multi-arch image (amd64 / arm64) is published on every release:
+
+```sh
+docker run -d --name nova-core \
+  --network host \
+  --device /dev/dvb \
+  -v nova-config:/config \
+  -v nova-data:/opt/nova \
+  ghcr.io/novaheadend/nova-core:latest
+```
+
+The bootstrap admin password is printed in `docker logs nova-core`. Pass your
+tuner devices with `--device /dev/dvb/…` (or `--privileged`); `--network host`
+keeps UDP multicast and client access simple. Tags: `:latest` and `:vX.Y.Z`.
