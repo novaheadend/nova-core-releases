@@ -87,13 +87,20 @@ An official multi-arch image (amd64 / arm64) is published on every release:
 
 ```sh
 docker run -d --name nova-core \
-  --network host \
   --device /dev/dvb \
+  -p 80:80 \
+  -p 8000:8000 \
   -v nova-config:/config \
   -v nova-data:/opt/nova \
   ghcr.io/novaheadend/nova-core:latest
 ```
 
-The bootstrap admin password is printed in `docker logs nova-core`. Pass your
-tuner devices with `--device /dev/dvb/…` (or `--privileged`); `--network host`
-keeps UDP multicast and client access simple. Tags: `:latest` and `:vX.Y.Z`.
+Published ports are the recommended default: `:80` is the web UI / control
+API and `:8000` is the stream / playlist endpoint (M3U + XMLTV + HTTP-TS),
+both plain TCP — bridge networking works for Plex, Jellyfin, Emby and any
+M3U client. `--device /dev/dvb` exposes the tuners; the bootstrap admin
+password is printed in `docker logs nova-core`. Tags: `:latest` and `:vX.Y.Z`.
+
+Use `--network host` **only** if you configure a UDP / RTP multicast output
+on a stream (e.g. `udp://239.1.2.3:1234`) — multicast egress doesn't cross
+Docker's bridge NAT. HTTP consumers never need it.
