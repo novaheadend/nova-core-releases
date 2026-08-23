@@ -19,12 +19,14 @@ Turn DVB-S / S2 / T / T2 / C tuners into HTTP-TS and UDP streams with a modern w
 
 ## Features
 
-- **Inputs:** DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C (full Linux DVB API, v5 signal stats)
+- **Tuner inputs:** DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C (full Linux DVB API, v5 signal stats)
+- **Network inputs:** HTTP-TS, UDP and RTP — unicast or multicast, read natively in-process, so Nova can sit in front of a multicast backbone you already run
+- **BISS descrambling:** apply the key a feed's distributor gives you (12-hex session word or 16-hex control word), using Nova dvbcsa — our own pure-Go DVB-CSA, validated byte-for-byte against libdvbcsa
 - **Outputs:** HTTP-TS, UDP / multicast, and a one-click `/playlist.m3u`
 - **Modern web UI** — tuners, streams, live signal / quality, client sessions, logs, EPG
 - **EPG** — XMLTV harvest, plus per-channel guide binding merged into one master guide matched to the playlist (Jellyfin / Plex / TiviMate ready)
 - **Channel logos** — per-channel icons downloaded once and served locally, carried in the playlist as tvg-logo
-- **Single static binary** — no ffmpeg, no Python, nothing else to install
+- **Single static binary** — no ffmpeg, no Python, nothing else to install; that includes the network inputs and the descrambler
 - **One-command install** — systemd unit + bootstrap admin, done
 - **Light on resources** — runs a 60+ stream headend on a low-power APU
 - **Secure by default** — IP allow-list and brute-force-resistant admin login
